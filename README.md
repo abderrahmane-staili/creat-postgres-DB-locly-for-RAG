@@ -1,4 +1,4 @@
-**English** | [العربية (الدارجة)](README.ar.md)
+**English** | [اARABIC](README.ar.md)
 
 # PostgreSQL + pgvector for RAG with n8n (Docker)
 
