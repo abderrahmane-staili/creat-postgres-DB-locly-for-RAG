@@ -1,0 +1,14 @@
+-- Runs automatically on the first start of the container (empty volume only).
+
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+CREATE TABLE IF NOT EXISTS documents (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    content TEXT NOT NULL,
+    metadata JSONB DEFAULT '{}'::jsonb,
+    embedding VECTOR(1536)   -- must match your embeddings model dimension
+);
+
+-- Optional: faster similarity search once the table grows
+-- CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops);
