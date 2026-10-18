@@ -1,0 +1,6 @@
+# Secrets
+.env
+
+# Database backups
+*.sql.bak
+rag_backup.sql
